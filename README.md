@@ -12,28 +12,34 @@ http://udacity-udagram-server.eba-6apfbaej.us-east-1.elasticbeanstalk.com/
 
 ### Deployment Diagram
 
-![AWS_Diagram](./docs/Udagram.drawio.png)
+![AWS_Diagram](./docs/imgs/Udagram.drawio.png)
 
 ### S3 (Static Website)
 
-![S3_Image](./docs/S3_1.png)
+![S3_Image](./docs/imgs/S3_1.png)
 
 ### RDS Postgres Database
 
-![RDS1_Image](./docs/RDS1.png)
-![RDS2_Image](./docs/RDS2.png)
+![RDS1_Image](./docs/imgs/RDS1.png)
+![RDS2_Image](./docs/imgs/RDS2.png)
 
 ### Elastic Beanstalk (API Server)
 
-![EB1_Image](./docs/EB1.png)
+![EB1_Image](./docs/imgs/EB1.png)
 
 #### Elastic Beanstalk Environment Variables
 
-![EB1_Image](./docs/EB2.png)
+![EB1_Image](./docs/imgs/EB2.png)
 
 ### CircleCi continuous deployment pipeline
 
-![CircleCi_Pipe1_Image](./docs/pipe1.png)
-![CircleCi_Pipe2_Image](./docs/pipe2.png)
-![CircleCi_Pipe3_Image](./docs/pipe3.png)
-![CircleCi_Pipe4_Image](./docs/pipe4.png)
+#### Pipeline Diagram
+
+![Pipeline_Diagram](./imgs/Pipeline.drawio.png)
+
+#### Pipeline Configuration
+
+![CircleCi_Pipe1_Image](./docs/imgs/pipe1.png)
+![CircleCi_Pipe2_Image](./docs/imgs/pipe2.png)
+![CircleCi_Pipe3_Image](./docs/imgs/pipe3.png)
+![CircleCi_Pipe4_Image](./docs/imgs/pipe4.png)
