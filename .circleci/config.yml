@@ -1,0 +1,51 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+  aws-cli: circleci/aws-cli@3.1.1
+  eb: circleci/aws-elastic-beanstalk@2.0.1
+
+workflows: # Define a Workflow running the build job, then the deploy job
+  version: 2
+  build-deploy: # Make a workflow to build and deploy your project
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build # Only run deploy job once the build job has completed
+          filters:
+            branches:
+              only: main # Only deploy when the commit is on the Main branch
+
+jobs: # Define the build and deploy jobs
+  build:
+    docker: # Use the Docker executor for the build job
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      - run:
+          name: Installing Udagram Front-end App Dependencies
+          command: npm run frontend:install
+      - run:
+          name: Building Udagram Front-end App
+          command: npm run frontend:build
+      - run:
+          name: Installing Udagram Back-end App Dependencies
+          command: npm run api:install
+      - run:
+          name: Building Udagram Back-end App
+          command: npm run api:build
+  deploy:
+    docker: # Use the Docker executor for the deploy job
+       - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - aws-cli/setup
+      - eb/setup
+      - run:
+          name: Deploy Udagram Front-end App 
+          command: npm run frontend:deploy
+      - run:
+          name: Deploy Udagram Back-end App 
+          command: npm run api:deploy
