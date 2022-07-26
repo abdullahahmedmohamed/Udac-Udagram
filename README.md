@@ -35,7 +35,7 @@ http://udacity-udagram-server.eba-6apfbaej.us-east-1.elasticbeanstalk.com/
 
 #### Pipeline Diagram
 
-![Pipeline_Diagram](./imgs/Pipeline.drawio.png)
+![Pipeline_Diagram](./docs/imgs/Pipeline.drawio.png)
 
 #### Pipeline Configuration
 
